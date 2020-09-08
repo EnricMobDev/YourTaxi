@@ -10,7 +10,7 @@ import SwiftUI
 
 enum TaxiListBuilder {
     static func makeTaxiListView(taxiListFetchable: TaxiListFetchableProtocol) -> some View {
-        let viewModel = TaxiListViewModel(taxiListFetchable: taxiListFetchable, showAlert: Binding<Bool>.constant(false))
+        let viewModel = TaxiListViewModel(taxiListFetchable: taxiListFetchable)
         return TaxiListView(viewModel: viewModel)
     }
 }

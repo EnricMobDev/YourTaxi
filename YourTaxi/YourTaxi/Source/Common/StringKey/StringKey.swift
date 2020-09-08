@@ -13,4 +13,7 @@ public enum StringKey {
     static let tabBarMapsItemName = "tabBar.maps.item.name"
     static let taxiListState = "taxi.list.state"
     static let taxiListLicene = "taxi.list.license"
+    static let taxiListAlertTitle = "taxi.list.alert.title"
+    static let taxiListAlertSubtitle = "taxi.list.alert.subtitle"
+    static let taxiListAlertPrimaryButtonTitle = "taxi.list.alert.primary.button.title"
 }

@@ -13,3 +13,7 @@
 //MARK: - TaxiListView
 "taxi.list.state" = "State";
 "taxi.list.license" = "License";
+"taxi.list.alert.title" = "We can't load data";
+"taxi.list.alert.subtitle" = "We have some problem with the internet connection for load data";
+"taxi.list.alert.primary.button.title" = "Retry";
+
