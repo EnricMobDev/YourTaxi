@@ -15,7 +15,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        let contentView = TabBarContentView()
+        // MARK: Variables
+        let taxiListFetchable = RemoteManager()
+        let contentView = TabBarContentView(taxiListFetchable: taxiListFetchable)
 
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)

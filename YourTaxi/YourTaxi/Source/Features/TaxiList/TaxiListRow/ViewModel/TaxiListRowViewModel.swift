@@ -10,18 +10,29 @@ import SwiftUI
 
 struct TaxiListRowViewModel: Identifiable {
     //MARK: - Variables
-    private let car: TaxiListResponse.Taxi
+    private let taxi: TaxiListResponse.Taxi
     
     var id: Int {
-        return car.id
+        return taxi.id
     }
     
     var type: String {
-        return car.type
+        return taxi.type
     }
     
     var state: String {
-        return car.state
+        return taxi.state
+    }
+    
+    //MARK: - Initialization
+    init(taxi: TaxiListResponse.Taxi) {
+        self.taxi = taxi
     }
 }
 
+//MARK: - Equatable
+extension TaxiListRowViewModel: Equatable {
+    static func == (lhs: TaxiListRowViewModel, rhs: TaxiListRowViewModel) -> Bool {
+        return lhs.id == rhs.id
+    }
+}

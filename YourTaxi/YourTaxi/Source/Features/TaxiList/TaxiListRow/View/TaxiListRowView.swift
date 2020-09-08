@@ -19,10 +19,11 @@ struct TaxiListRowView: View {
     }
     
     var body: some View {
-        HStack {
+        VStack(alignment: .leading, spacing: 10) {
             Text(viewModel.type)
-            Text(viewModel.state)
-            Text("\(viewModel.id)")
+                .font(.title)
+            Text("\(StringKey.taxiListState.localized): \(viewModel.state)")
+            Text("\(StringKey.taxiListLicene.localized): \(viewModel.id)")
         }
     }
 }

@@ -22,6 +22,11 @@
 		374B7B1925077C6F00BBADE7 /* TaxiListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B1825077C6F00BBADE7 /* TaxiListRowView.swift */; };
 		374B7B1B25077C7C00BBADE7 /* TaxiListRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B1A25077C7C00BBADE7 /* TaxiListRowViewModel.swift */; };
 		374B7B1E25077F2800BBADE7 /* TaxiListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B1D25077F2800BBADE7 /* TaxiListResponse.swift */; };
+		374B7B242507879B00BBADE7 /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B232507879B00BBADE7 /* Decode.swift */; };
+		374B7B26250787DE00BBADE7 /* RemoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B25250787DE00BBADE7 /* RemoteManager.swift */; };
+		374B7B2B25079AC700BBADE7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 374B7B2D25079AC700BBADE7 /* Localizable.strings */; };
+		374B7B3125079BB600BBADE7 /* StringKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B3025079BB600BBADE7 /* StringKey.swift */; };
+		374B7B3425079C8100BBADE7 /* Localization+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B3325079C8100BBADE7 /* Localization+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +59,12 @@
 		374B7B1825077C6F00BBADE7 /* TaxiListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiListRowView.swift; sourceTree = "<group>"; };
 		374B7B1A25077C7C00BBADE7 /* TaxiListRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiListRowViewModel.swift; sourceTree = "<group>"; };
 		374B7B1D25077F2800BBADE7 /* TaxiListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiListResponse.swift; sourceTree = "<group>"; };
+		374B7B232507879B00BBADE7 /* Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decode.swift; sourceTree = "<group>"; };
+		374B7B25250787DE00BBADE7 /* RemoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteManager.swift; sourceTree = "<group>"; };
+		374B7B2C25079AC700BBADE7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		374B7B2E25079AD900BBADE7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		374B7B3025079BB600BBADE7 /* StringKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringKey.swift; sourceTree = "<group>"; };
+		374B7B3325079C8100BBADE7 /* Localization+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localization+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				374B7B012507762F00BBADE7 /* Source */,
-				374B7ADF2507748000BBADE7 /* AppDelegate.swift */,
-				374B7AE12507748000BBADE7 /* SceneDelegate.swift */,
-				374B7AE52507748A00BBADE7 /* Assets.xcassets */,
-				374B7AEA2507748A00BBADE7 /* LaunchScreen.storyboard */,
+				374B7B27250799A800BBADE7 /* Resource */,
 				374B7AED2507748A00BBADE7 /* Info.plist */,
 				374B7AE72507748A00BBADE7 /* Preview Content */,
 			);
@@ -126,6 +134,7 @@
 		374B7B012507762F00BBADE7 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				374B7B28250799C200BBADE7 /* SceneDelegate */,
 				374B7B022507763E00BBADE7 /* Features */,
 				374B7B122507794500BBADE7 /* Common */,
 			);
@@ -205,7 +214,9 @@
 		374B7B122507794500BBADE7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				374B7B1C25077F0600BBADE7 /* ServiceResponse */,
+				374B7B3225079C6900BBADE7 /* Extensions */,
+				374B7B2F25079B9000BBADE7 /* StringKey */,
+				374B7B212507876300BBADE7 /* APIService */,
 				374B7B132507796200BBADE7 /* SFSymbols */,
 			);
 			path = Common;
@@ -241,6 +252,67 @@
 				374B7B1D25077F2800BBADE7 /* TaxiListResponse.swift */,
 			);
 			path = ServiceResponse;
+			sourceTree = "<group>";
+		};
+		374B7B202507871300BBADE7 /* RemoteManager */ = {
+			isa = PBXGroup;
+			children = (
+				374B7B25250787DE00BBADE7 /* RemoteManager.swift */,
+			);
+			path = RemoteManager;
+			sourceTree = "<group>";
+		};
+		374B7B212507876300BBADE7 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				374B7B222507877700BBADE7 /* Parsing */,
+				374B7B1C25077F0600BBADE7 /* ServiceResponse */,
+				374B7B202507871300BBADE7 /* RemoteManager */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		374B7B222507877700BBADE7 /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				374B7B232507879B00BBADE7 /* Decode.swift */,
+			);
+			path = Parsing;
+			sourceTree = "<group>";
+		};
+		374B7B27250799A800BBADE7 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				374B7AE52507748A00BBADE7 /* Assets.xcassets */,
+				374B7B2D25079AC700BBADE7 /* Localizable.strings */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		374B7B28250799C200BBADE7 /* SceneDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				374B7ADF2507748000BBADE7 /* AppDelegate.swift */,
+				374B7AE12507748000BBADE7 /* SceneDelegate.swift */,
+				374B7AEA2507748A00BBADE7 /* LaunchScreen.storyboard */,
+			);
+			path = SceneDelegate;
+			sourceTree = "<group>";
+		};
+		374B7B2F25079B9000BBADE7 /* StringKey */ = {
+			isa = PBXGroup;
+			children = (
+				374B7B3025079BB600BBADE7 /* StringKey.swift */,
+			);
+			path = StringKey;
+			sourceTree = "<group>";
+		};
+		374B7B3225079C6900BBADE7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				374B7B3325079C8100BBADE7 /* Localization+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +379,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 374B7AD32507748000BBADE7;
 			productRefGroup = 374B7ADD2507748000BBADE7 /* Products */;
@@ -325,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				374B7AEC2507748A00BBADE7 /* LaunchScreen.storyboard in Resources */,
+				374B7B2B25079AC700BBADE7 /* Localizable.strings in Resources */,
 				374B7AE92507748A00BBADE7 /* Preview Assets.xcassets in Resources */,
 				374B7AE62507748A00BBADE7 /* Assets.xcassets in Resources */,
 			);
@@ -344,13 +418,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				374B7B3425079C8100BBADE7 /* Localization+Extension.swift in Sources */,
 				374B7B1925077C6F00BBADE7 /* TaxiListRowView.swift in Sources */,
 				374B7B0F2507786500BBADE7 /* TaxiListViewModel.swift in Sources */,
 				374B7AE02507748000BBADE7 /* AppDelegate.swift in Sources */,
 				374B7B1B25077C7C00BBADE7 /* TaxiListRowViewModel.swift in Sources */,
 				374B7AE22507748000BBADE7 /* SceneDelegate.swift in Sources */,
+				374B7B26250787DE00BBADE7 /* RemoteManager.swift in Sources */,
+				374B7B3125079BB600BBADE7 /* StringKey.swift in Sources */,
 				374B7B112507789E00BBADE7 /* TaxiListView.swift in Sources */,
 				374B7B072507778A00BBADE7 /* TabBarViews.swift in Sources */,
+				374B7B242507879B00BBADE7 /* Decode.swift in Sources */,
 				374B7B1E25077F2800BBADE7 /* TaxiListResponse.swift in Sources */,
 				374B7B152507797800BBADE7 /* SFSymbolName.swift in Sources */,
 				374B7AE42507748000BBADE7 /* TabBarContentView.swift in Sources */,
@@ -385,6 +463,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		374B7B2D25079AC700BBADE7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				374B7B2C25079AC700BBADE7 /* en */,
+				374B7B2E25079AD900BBADE7 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -392,6 +479,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -452,6 +540,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

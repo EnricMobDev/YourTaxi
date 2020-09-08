@@ -15,10 +15,12 @@ private enum TabBarItems {
 
 // MARK: GamesTabView
 struct TaxiListTabView: View {
+    let taxiListFetchable: TaxiListFetchableProtocol
 
     var body: some View {
-        TaxiListBuilder.makeTaxiListView().tabItem {
+        TaxiListBuilder.makeTaxiListView(taxiListFetchable: taxiListFetchable).tabItem {
             Image(systemName: SFSymbolName.tabBarTaxiList)
+            Text(StringKey.tabBarTaxiListItemName.localized)
         }.tag(TabBarItems.taxiList)
     }
 }

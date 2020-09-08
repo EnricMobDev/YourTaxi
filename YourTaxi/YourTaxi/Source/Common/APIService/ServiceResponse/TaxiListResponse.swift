@@ -9,17 +9,14 @@
 import Foundation
 
 struct TaxiListResponse: Codable {
-    // MARK: - CarList
-    struct CarList: Codable {
-        let poiList: [Taxi]
-    }
+    let poiList: [Taxi]
 
     // MARK: - Taxi
     struct Taxi: Codable {
         let id: Int
         let coordinate: Coordinate
         let state, type: String
-        let heading: Int
+        let heading: Double
     }
 
     // MARK: - Coordinate

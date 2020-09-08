@@ -12,6 +12,9 @@ struct TaxiListView: View {
     @ObservedObject var viewModel: TaxiListViewModel
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(viewModel.dataSource, content: TaxiListRowView.init(viewModel:))
+        }
+        .onAppear(perform: viewModel.fetchTaxiList)
     }
 }

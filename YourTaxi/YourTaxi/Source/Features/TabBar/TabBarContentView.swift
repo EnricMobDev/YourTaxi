@@ -9,9 +9,11 @@
 import SwiftUI
 
 struct TabBarContentView: View {
+    let taxiListFetchable: TaxiListFetchableProtocol
+
     var body: some View {
         TabView {
-            TaxiListTabView()
+            TaxiListTabView(taxiListFetchable: taxiListFetchable)
         }
     }
 }
