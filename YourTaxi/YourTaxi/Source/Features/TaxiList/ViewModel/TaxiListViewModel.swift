@@ -12,12 +12,14 @@ import SwiftUI
 class TaxiListViewModel: ObservableObject {
     // MARK: Variables
     @Published var dataSource: [TaxiListRowViewModel] = []
+    @Binding var showAlert: Bool 
 
     private let taxiListFetchable: TaxiListFetchableProtocol
     private var disposables = Set<AnyCancellable>()
 
-    init(taxiListFetchable: TaxiListFetchableProtocol) {
+    init(taxiListFetchable: TaxiListFetchableProtocol, showAlert: Binding<Bool>) {
         self.taxiListFetchable = taxiListFetchable
+        _showAlert = showAlert
     }
     
     struct HamburgCoordinate {
@@ -43,7 +45,9 @@ class TaxiListViewModel: ObservableObject {
                 switch value {
                 case .failure:
                     self.dataSource = []
+                    self.showAlert = true
                 case .finished:
+                    self.showAlert = true
                     break
                 }
             },

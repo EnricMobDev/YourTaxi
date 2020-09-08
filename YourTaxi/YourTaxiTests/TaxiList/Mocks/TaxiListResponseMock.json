@@ -1,0 +1,14 @@
+{
+  "poiList": [
+    {
+      "id": 1647471866,
+      "coordinate": {
+        "latitude": 53.56240493421279,
+        "longitude": 9.975336827337742
+      },
+      "state": "ACTIVE",
+      "type": "TAXI",
+      "heading": 0.0
+    }
+  ]
+}

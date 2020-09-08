@@ -13,7 +13,6 @@
 		374B7AE62507748A00BBADE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 374B7AE52507748A00BBADE7 /* Assets.xcassets */; };
 		374B7AE92507748A00BBADE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 374B7AE82507748A00BBADE7 /* Preview Assets.xcassets */; };
 		374B7AEC2507748A00BBADE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 374B7AEA2507748A00BBADE7 /* LaunchScreen.storyboard */; };
-		374B7AF72507748A00BBADE7 /* YourTaxiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7AF62507748A00BBADE7 /* YourTaxiTests.swift */; };
 		374B7B072507778A00BBADE7 /* TabBarViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B062507778A00BBADE7 /* TabBarViews.swift */; };
 		374B7B0D2507782400BBADE7 /* TaxiListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B0C2507782400BBADE7 /* TaxiListBuilder.swift */; };
 		374B7B0F2507786500BBADE7 /* TaxiListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B0E2507786500BBADE7 /* TaxiListViewModel.swift */; };
@@ -30,6 +29,11 @@
 		374B7B382507BAFC00BBADE7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B372507BAFC00BBADE7 /* MapView.swift */; };
 		374B7B3B2507BB7F00BBADE7 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B3A2507BB7F00BBADE7 /* MapCoordinator.swift */; };
 		374B7B3E2507BC8C00BBADE7 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B3D2507BC8C00BBADE7 /* MapPin.swift */; };
+		374B7B482507C1E500BBADE7 /* TaxiListResponseMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 374B7B472507C1E500BBADE7 /* TaxiListResponseMock.json */; };
+		374B7B4A2507C21E00BBADE7 /* TaxiListMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B492507C21E00BBADE7 /* TaxiListMock.swift */; };
+		374B7B4D2507C41200BBADE7 /* TaxiListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B4C2507C41200BBADE7 /* TaxiListViewModelTests.swift */; };
+		374B7B512507C4BB00BBADE7 /* RemoteManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B502507C4BB00BBADE7 /* RemoteManagerMock.swift */; };
+		374B7B522507C76900BBADE7 /* TaxiListResponseMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 374B7B472507C1E500BBADE7 /* TaxiListResponseMock.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +56,6 @@
 		374B7AEB2507748A00BBADE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		374B7AED2507748A00BBADE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		374B7AF22507748A00BBADE7 /* YourTaxiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YourTaxiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		374B7AF62507748A00BBADE7 /* YourTaxiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourTaxiTests.swift; sourceTree = "<group>"; };
 		374B7AF82507748A00BBADE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		374B7B062507778A00BBADE7 /* TabBarViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViews.swift; sourceTree = "<group>"; };
 		374B7B0C2507782400BBADE7 /* TaxiListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiListBuilder.swift; sourceTree = "<group>"; };
@@ -71,6 +74,10 @@
 		374B7B372507BAFC00BBADE7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		374B7B3A2507BB7F00BBADE7 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 		374B7B3D2507BC8C00BBADE7 /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
+		374B7B472507C1E500BBADE7 /* TaxiListResponseMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TaxiListResponseMock.json; sourceTree = "<group>"; };
+		374B7B492507C21E00BBADE7 /* TaxiListMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiListMock.swift; sourceTree = "<group>"; };
+		374B7B4C2507C41200BBADE7 /* TaxiListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiListViewModelTests.swift; sourceTree = "<group>"; };
+		374B7B502507C4BB00BBADE7 /* RemoteManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteManagerMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +138,8 @@
 		374B7AF52507748A00BBADE7 /* YourTaxiTests */ = {
 			isa = PBXGroup;
 			children = (
-				374B7AF62507748A00BBADE7 /* YourTaxiTests.swift */,
+				374B7B3F2507C02E00BBADE7 /* TaxiList */,
+				374B7B4E2507C47C00BBADE7 /* Common */,
 				374B7AF82507748A00BBADE7 /* Info.plist */,
 			);
 			path = YourTaxiTests;
@@ -356,6 +364,48 @@
 			path = MapPin;
 			sourceTree = "<group>";
 		};
+		374B7B3F2507C02E00BBADE7 /* TaxiList */ = {
+			isa = PBXGroup;
+			children = (
+				374B7B402507C05C00BBADE7 /* Mocks */,
+				374B7B4B2507C3F300BBADE7 /* ViewModel */,
+			);
+			path = TaxiList;
+			sourceTree = "<group>";
+		};
+		374B7B402507C05C00BBADE7 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				374B7B472507C1E500BBADE7 /* TaxiListResponseMock.json */,
+				374B7B492507C21E00BBADE7 /* TaxiListMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		374B7B4B2507C3F300BBADE7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				374B7B4C2507C41200BBADE7 /* TaxiListViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		374B7B4E2507C47C00BBADE7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				374B7B4F2507C49C00BBADE7 /* RemoteManager */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		374B7B4F2507C49C00BBADE7 /* RemoteManager */ = {
+			isa = PBXGroup;
+			children = (
+				374B7B502507C4BB00BBADE7 /* RemoteManagerMock.swift */,
+			);
+			path = RemoteManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -409,6 +459,7 @@
 					};
 					374B7AF12507748A00BBADE7 = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 						TestTargetID = 374B7ADB2507748000BBADE7;
 					};
 				};
@@ -440,6 +491,7 @@
 			files = (
 				374B7AEC2507748A00BBADE7 /* LaunchScreen.storyboard in Resources */,
 				374B7B2B25079AC700BBADE7 /* Localizable.strings in Resources */,
+				374B7B522507C76900BBADE7 /* TaxiListResponseMock.json in Resources */,
 				374B7AE92507748A00BBADE7 /* Preview Assets.xcassets in Resources */,
 				374B7AE62507748A00BBADE7 /* Assets.xcassets in Resources */,
 			);
@@ -449,6 +501,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				374B7B482507C1E500BBADE7 /* TaxiListResponseMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,7 +537,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				374B7AF72507748A00BBADE7 /* YourTaxiTests.swift in Sources */,
+				374B7B4D2507C41200BBADE7 /* TaxiListViewModelTests.swift in Sources */,
+				374B7B512507C4BB00BBADE7 /* RemoteManagerMock.swift in Sources */,
+				374B7B4A2507C21E00BBADE7 /* TaxiListMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,6 +735,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DU4SSYH2B5;
 				INFOPLIST_FILE = YourTaxiTests/Info.plist;
@@ -691,6 +747,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = EnricPou.YourTaxiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YourTaxi.app/YourTaxi";
@@ -702,6 +759,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DU4SSYH2B5;
 				INFOPLIST_FILE = YourTaxiTests/Info.plist;
