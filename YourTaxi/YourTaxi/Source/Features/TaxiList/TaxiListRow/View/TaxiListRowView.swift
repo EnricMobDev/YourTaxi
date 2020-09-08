@@ -22,8 +22,18 @@ struct TaxiListRowView: View {
         VStack(alignment: .leading, spacing: 10) {
             Text(viewModel.type)
                 .font(.title)
+            mapView()
             Text("\(StringKey.taxiListState.localized): \(viewModel.state)")
-            Text("\(StringKey.taxiListLicene.localized): \(viewModel.id)")
+            Text("\(StringKey.taxiListLicene.localized): \(viewModel.license)")
         }
+    }
+    
+    // MARK: - Views Design
+    private func mapView() -> some View {
+        return MapView(pins: [viewModel.taxi])
+            .cornerRadius(25)
+            .disabled(true)
+            .padding(.horizontal)
+            .frame(height: 180)
     }
 }

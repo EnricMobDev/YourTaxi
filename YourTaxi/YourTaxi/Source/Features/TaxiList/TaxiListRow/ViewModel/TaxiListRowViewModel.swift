@@ -7,14 +7,13 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct TaxiListRowViewModel: Identifiable {
     //MARK: - Variables
-    private let taxi: TaxiListResponse.Taxi
+    let taxi: TaxiListResponse.Taxi
     
-    var id: Int {
-        return taxi.id
-    }
+    var id = UUID()
     
     var type: String {
         return taxi.type
@@ -22,6 +21,10 @@ struct TaxiListRowViewModel: Identifiable {
     
     var state: String {
         return taxi.state
+    }
+    
+    var license: Int {
+        return taxi.id
     }
     
     //MARK: - Initialization
