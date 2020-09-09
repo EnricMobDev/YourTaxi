@@ -9,8 +9,10 @@
 import SwiftUI
 
 struct TaxiListView: View {
+    //MARK: - Variables
     @ObservedObject var viewModel: TaxiListViewModel
     
+    // MARK: - Body
     var body: some View {
         if viewModel.isShowingLoader {
             viewModel.fetchTaxiList()

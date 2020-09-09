@@ -24,3 +24,14 @@ struct TaxiListTabView: View {
         }.tag(TabBarItems.taxiList)
     }
 }
+
+struct TaxiMapTabView: View {
+    let taxiListFetchable: TaxiListFetchableProtocol
+
+    var body: some View {
+        TaxiMapBuilder.makeTaxiMapView(taxiListFetchable: taxiListFetchable).tabItem {
+            Image(systemName: SFSymbolName.tabBarTaxiMap)
+            Text(StringKey.tabBarMapsItemName.localized)
+        }.tag(TabBarItems.taxiMap)
+    }
+}

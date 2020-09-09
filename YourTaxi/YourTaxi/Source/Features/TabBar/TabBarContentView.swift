@@ -14,6 +14,7 @@ struct TabBarContentView: View {
     var body: some View {
         TabView {
             TaxiListTabView(taxiListFetchable: taxiListFetchable)
+            TaxiMapTabView(taxiListFetchable: taxiListFetchable)
         }
     }
 }
