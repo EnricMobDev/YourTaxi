@@ -17,9 +17,9 @@ class TaxiListViewModel: ObservableObject {
     private let taxiListFetchable: TaxiListFetchableProtocol
     private var disposables = Set<AnyCancellable>()
 
-    var showingAlert: Bool = false {
+    var isShowingLoader: Bool = true {
         willSet {
-            objectWillChange.send(showingAlert)
+            objectWillChange.send(isShowingLoader)
         }
     }
     
@@ -52,15 +52,14 @@ class TaxiListViewModel: ObservableObject {
                 switch value {
                 case .failure:
                     self.dataSource = []
-                    self.showingAlert = true
                 case .finished:
+                    self.isShowingLoader = false
                     break
                 }
             },
             receiveValue: { [weak self] taxiList in
                 guard let self = self else { return }
                 self.dataSource = taxiList
-                self.showingAlert = false
         })
         .store(in: &disposables)
     }

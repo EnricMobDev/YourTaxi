@@ -13,6 +13,5 @@
 //MARK: - TaxiListView
 "taxi.list.state" = "Estado";
 "taxi.list.license" = "Licencia";
-"taxi.list.alert.title" = "No se ha podido cargar los datos";
-"taxi.list.alert.subtitle" = "Hay algún problema con la conexión a internet a la hora de cargar los datos";
-"taxi.list.alert.primary.button.title" = "Reintentar";
+"taxi.list.loading.message" = "Cargando ...";
+
