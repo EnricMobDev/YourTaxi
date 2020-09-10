@@ -13,10 +13,16 @@ import SwiftUI
 class MapCoordinator: NSObject, MKMapViewDelegate {
     // MARK: Variables
     var parent: MapView
-
+    @Binding var neCoord: CLLocationCoordinate2D
+    @Binding var swCoord: CLLocationCoordinate2D
+    @Binding var isCoordUpdated: Bool
+    
     // MARK: Inicialization
-    init(_ parent: MapView) {
+    init(_ parent: MapView, neCoord: Binding<CLLocationCoordinate2D>, swCoord: Binding<CLLocationCoordinate2D>, isCoordUpdated: Binding<Bool>) {
         self.parent = parent
+        _neCoord = neCoord
+        _swCoord = swCoord
+        _isCoordUpdated = isCoordUpdated
     }
     
     // MARK: Annotation methods
@@ -30,5 +36,15 @@ class MapCoordinator: NSObject, MKMapViewDelegate {
             annotationView?.annotation = annotation
         }
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+//        let mRect = mapView.visibleMapRect
+//        let neMapPoint = MKMapPoint(x: mRect.maxX, y: mRect.origin.y)
+//        let swMapPoint = MKMapPoint(x: mRect.origin.x, y: mRect.maxY)
+//        
+//        neCoord = neMapPoint.coordinate
+//        swCoord = swMapPoint.coordinate
+//        isCoordUpdated = true
     }
 }

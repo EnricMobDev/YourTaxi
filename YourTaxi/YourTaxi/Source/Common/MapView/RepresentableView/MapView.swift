@@ -13,6 +13,9 @@ import Combine
 struct MapView: UIViewRepresentable {
     // MARK: Variables
     var pins: [TaxiListResponse.Taxi]
+    @Binding var neCoord: CLLocationCoordinate2D
+    @Binding var swCoord: CLLocationCoordinate2D
+    @Binding var isCoordUpdated: Bool
 
     // MARK: MapView Creation
     func makeUIView(context: Context) -> MKMapView {
@@ -26,17 +29,24 @@ struct MapView: UIViewRepresentable {
         view.removeAnnotations(view.annotations)
         
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-        let _ = pins.map { taxi in
-            let location = CLLocationCoordinate2D(latitude: taxi.coordinate.latitude, longitude: taxi.coordinate.longitude)
+        let _ = pins.filter {
+            let rangeOfLatitude = ($0.coordinate.latitude >= swCoord.latitude) && ($0.coordinate.latitude <= neCoord.latitude)
+            let rangeOfLongitude = ($0.coordinate.longitude >= swCoord.longitude) && ($0.coordinate.longitude <= neCoord.longitude)
+            
+            if  rangeOfLatitude && rangeOfLongitude{
+                let location = CLLocationCoordinate2D(latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude)
                 let annotation = MapPin(coordinate: location)
                 let region = MKCoordinateRegion(center: location, span: span)
+                
                 view.setRegion(region, animated: true)
                 view.addAnnotation(annotation)
+            }
+            return true
         }
     }
     
     // MARK: - MapCoordinator
     func makeCoordinator() -> MapCoordinator {
-        MapCoordinator(self)
+        MapCoordinator(self, neCoord: $neCoord, swCoord: $swCoord, isCoordUpdated: $isCoordUpdated)
     }
 }
