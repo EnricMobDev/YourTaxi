@@ -16,8 +16,6 @@ class TaxiMapViewModel: ObservableObject {
     @Published var dataSource: [TaxiListResponse.Taxi] = []
     private let taxiListFetchable: TaxiListFetchableProtocol
     private var disposables = Set<AnyCancellable>()
-//    @Binding var neCoord: CLLocationCoordinate2D
-//    @Binding var swCoord: CLLocationCoordinate2D
     
     //MARK: - Inicialization
     init(taxiListFetchable: TaxiListFetchableProtocol) {

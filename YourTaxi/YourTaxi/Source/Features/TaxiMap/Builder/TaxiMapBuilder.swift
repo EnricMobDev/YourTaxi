@@ -15,6 +15,6 @@ enum TaxiMapBuilder {
         let southWestHamburgCoordinate = CLLocationCoordinate2D(latitude: 53.394655, longitude:  9.757589)
         
         let viewModel = TaxiMapViewModel(taxiListFetchable: taxiListFetchable)
-        return TaxiMapView(viewModel: viewModel, neCoord: northEstHamburgCoordinate, swCoord: southWestHamburgCoordinate, isCoordUpdated: false)
+        return TaxiMapView(viewModel: viewModel, neCoord: northEstHamburgCoordinate, swCoord: southWestHamburgCoordinate, isUpdatedCoord: false)
     }
 }

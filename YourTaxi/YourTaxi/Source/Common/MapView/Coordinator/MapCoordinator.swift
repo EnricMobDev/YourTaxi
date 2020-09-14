@@ -15,14 +15,14 @@ class MapCoordinator: NSObject, MKMapViewDelegate {
     var parent: MapView
     @Binding var neCoord: CLLocationCoordinate2D
     @Binding var swCoord: CLLocationCoordinate2D
-    @Binding var isCoordUpdated: Bool
+    @Binding var isUpdatedCoord: Bool
     
     // MARK: Inicialization
-    init(_ parent: MapView, neCoord: Binding<CLLocationCoordinate2D>, swCoord: Binding<CLLocationCoordinate2D>, isCoordUpdated: Binding<Bool>) {
+    init(_ parent: MapView, neCoord: Binding<CLLocationCoordinate2D>, swCoord: Binding<CLLocationCoordinate2D>, isUpdatedCoord : Binding<Bool>) {
         self.parent = parent
         _neCoord = neCoord
         _swCoord = swCoord
-        _isCoordUpdated = isCoordUpdated
+        _isUpdatedCoord = isUpdatedCoord
     }
     
     // MARK: Annotation methods
@@ -39,12 +39,12 @@ class MapCoordinator: NSObject, MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-//        let mRect = mapView.visibleMapRect
-//        let neMapPoint = MKMapPoint(x: mRect.maxX, y: mRect.origin.y)
-//        let swMapPoint = MKMapPoint(x: mRect.origin.x, y: mRect.maxY)
-//        
-//        neCoord = neMapPoint.coordinate
-//        swCoord = swMapPoint.coordinate
-//        isCoordUpdated = true
+        let mRect = mapView.visibleMapRect
+        let neMapPoint = MKMapPoint(x: mRect.maxX, y: mRect.origin.y)
+        let swMapPoint = MKMapPoint(x: mRect.origin.x, y: mRect.maxY)
+        
+        neCoord = neMapPoint.coordinate
+        swCoord = swMapPoint.coordinate
+        isUpdatedCoord = true
     }
 }

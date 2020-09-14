@@ -32,7 +32,7 @@ struct TaxiListRowView: View {
     private func mapView() -> some View {
         let emptyLocation = Binding<CLLocationCoordinate2D>.constant(CLLocationCoordinate2D())
         
-        return MapView(pins: [viewModel.taxi], neCoord: emptyLocation, swCoord: emptyLocation, isCoordUpdated: Binding<Bool>.constant(false))
+        return MapView(pins: [viewModel.taxi], neCoord: emptyLocation, swCoord: emptyLocation, isUpdatedCoord: Binding<Bool>.constant(false))
             .cornerRadius(25)
             .disabled(true)
             .padding(.horizontal)

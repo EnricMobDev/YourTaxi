@@ -15,7 +15,7 @@ struct MapView: UIViewRepresentable {
     var pins: [TaxiListResponse.Taxi]
     @Binding var neCoord: CLLocationCoordinate2D
     @Binding var swCoord: CLLocationCoordinate2D
-    @Binding var isCoordUpdated: Bool
+    @Binding var isUpdatedCoord: Bool
 
     // MARK: MapView Creation
     func makeUIView(context: Context) -> MKMapView {
@@ -33,7 +33,7 @@ struct MapView: UIViewRepresentable {
             let rangeOfLatitude = ($0.coordinate.latitude >= swCoord.latitude) && ($0.coordinate.latitude <= neCoord.latitude)
             let rangeOfLongitude = ($0.coordinate.longitude >= swCoord.longitude) && ($0.coordinate.longitude <= neCoord.longitude)
             
-            if  rangeOfLatitude && rangeOfLongitude{
+            if rangeOfLatitude && rangeOfLongitude{
                 let location = CLLocationCoordinate2D(latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude)
                 let annotation = MapPin(coordinate: location)
                 let region = MKCoordinateRegion(center: location, span: span)
@@ -47,6 +47,6 @@ struct MapView: UIViewRepresentable {
     
     // MARK: - MapCoordinator
     func makeCoordinator() -> MapCoordinator {
-        MapCoordinator(self, neCoord: $neCoord, swCoord: $swCoord, isCoordUpdated: $isCoordUpdated)
+        MapCoordinator(self, neCoord: $neCoord, swCoord: $swCoord, isUpdatedCoord: $isUpdatedCoord)
     }
 }
