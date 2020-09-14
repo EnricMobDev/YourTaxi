@@ -34,6 +34,9 @@
 		374B7B4D2507C41200BBADE7 /* TaxiListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B4C2507C41200BBADE7 /* TaxiListViewModelTests.swift */; };
 		374B7B512507C4BB00BBADE7 /* RemoteManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B502507C4BB00BBADE7 /* RemoteManagerMock.swift */; };
 		374B7B522507C76900BBADE7 /* TaxiListResponseMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 374B7B472507C1E500BBADE7 /* TaxiListResponseMock.json */; };
+		374B7B572508DD7400BBADE7 /* TaxiMapBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B562508DD7400BBADE7 /* TaxiMapBuilder.swift */; };
+		374B7B592508DDC100BBADE7 /* TaxiMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B582508DDC100BBADE7 /* TaxiMapView.swift */; };
+		374B7B5B2508DDDC00BBADE7 /* TaxiMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B5A2508DDDC00BBADE7 /* TaxiMapViewModel.swift */; };
 		37590E77250F7BB400A63505 /* TaxiListRowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37590E76250F7BB400A63505 /* TaxiListRowTests.swift */; };
 		37590E7F250F885C00A63505 /* YourTaxiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37590E7E250F885C00A63505 /* YourTaxiUITests.swift */; };
 /* End PBXBuildFile section */
@@ -87,6 +90,9 @@
 		374B7B492507C21E00BBADE7 /* TaxiListMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiListMock.swift; sourceTree = "<group>"; };
 		374B7B4C2507C41200BBADE7 /* TaxiListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiListViewModelTests.swift; sourceTree = "<group>"; };
 		374B7B502507C4BB00BBADE7 /* RemoteManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteManagerMock.swift; sourceTree = "<group>"; };
+		374B7B562508DD7400BBADE7 /* TaxiMapBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiMapBuilder.swift; sourceTree = "<group>"; };
+		374B7B582508DDC100BBADE7 /* TaxiMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiMapView.swift; sourceTree = "<group>"; };
+		374B7B5A2508DDDC00BBADE7 /* TaxiMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiMapViewModel.swift; sourceTree = "<group>"; };
 		37590E76250F7BB400A63505 /* TaxiListRowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiListRowTests.swift; sourceTree = "<group>"; };
 		37590E7C250F885C00A63505 /* YourTaxiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YourTaxiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37590E7E250F885C00A63505 /* YourTaxiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourTaxiUITests.swift; sourceTree = "<group>"; };
@@ -210,6 +216,9 @@
 		374B7B052507775D00BBADE7 /* TaxiMap */ = {
 			isa = PBXGroup;
 			children = (
+				374B7B552508DD4500BBADE7 /* Builder */,
+				374B7B542508DD3F00BBADE7 /* View */,
+				374B7B532508DD3000BBADE7 /* ViewModel */,
 			);
 			path = TaxiMap;
 			sourceTree = "<group>";
@@ -429,6 +438,30 @@
 			path = RemoteManager;
 			sourceTree = "<group>";
 		};
+		374B7B532508DD3000BBADE7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				374B7B5A2508DDDC00BBADE7 /* TaxiMapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		374B7B542508DD3F00BBADE7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				374B7B582508DDC100BBADE7 /* TaxiMapView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		374B7B552508DD4500BBADE7 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				374B7B562508DD7400BBADE7 /* TaxiMapBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
 		37590E74250F7B6C00A63505 /* TaxiListRow */ = {
 			isa = PBXGroup;
 			children = (
@@ -597,7 +630,9 @@
 				374B7AE02507748000BBADE7 /* AppDelegate.swift in Sources */,
 				374B7B1B25077C7C00BBADE7 /* TaxiListRowViewModel.swift in Sources */,
 				374B7AE22507748000BBADE7 /* SceneDelegate.swift in Sources */,
+				374B7B592508DDC100BBADE7 /* TaxiMapView.swift in Sources */,
 				374B7B26250787DE00BBADE7 /* RemoteManager.swift in Sources */,
+				374B7B5B2508DDDC00BBADE7 /* TaxiMapViewModel.swift in Sources */,
 				374B7B3125079BB600BBADE7 /* StringKey.swift in Sources */,
 				374B7B112507789E00BBADE7 /* TaxiListView.swift in Sources */,
 				374B7B3B2507BB7F00BBADE7 /* MapCoordinator.swift in Sources */,
@@ -608,6 +643,7 @@
 				374B7B152507797800BBADE7 /* SFSymbolName.swift in Sources */,
 				374B7AE42507748000BBADE7 /* TabBarContentView.swift in Sources */,
 				374B7B0D2507782400BBADE7 /* TaxiListBuilder.swift in Sources */,
+				374B7B572508DD7400BBADE7 /* TaxiMapBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
