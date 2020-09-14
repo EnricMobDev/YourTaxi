@@ -38,7 +38,8 @@
 		374B7B592508DDC100BBADE7 /* TaxiMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B582508DDC100BBADE7 /* TaxiMapView.swift */; };
 		374B7B5B2508DDDC00BBADE7 /* TaxiMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B5A2508DDDC00BBADE7 /* TaxiMapViewModel.swift */; };
 		37590E77250F7BB400A63505 /* TaxiListRowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37590E76250F7BB400A63505 /* TaxiListRowTests.swift */; };
-		37590E7F250F885C00A63505 /* YourTaxiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37590E7E250F885C00A63505 /* YourTaxiUITests.swift */; };
+		37590E7F250F885C00A63505 /* TaxiListViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37590E7E250F885C00A63505 /* TaxiListViewUITests.swift */; };
+		37590E89250F9B8C00A63505 /* TaxiMapUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37590E88250F9B8C00A63505 /* TaxiMapUITest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,8 +96,9 @@
 		374B7B5A2508DDDC00BBADE7 /* TaxiMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiMapViewModel.swift; sourceTree = "<group>"; };
 		37590E76250F7BB400A63505 /* TaxiListRowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiListRowTests.swift; sourceTree = "<group>"; };
 		37590E7C250F885C00A63505 /* YourTaxiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YourTaxiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		37590E7E250F885C00A63505 /* YourTaxiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourTaxiUITests.swift; sourceTree = "<group>"; };
+		37590E7E250F885C00A63505 /* TaxiListViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiListViewUITests.swift; sourceTree = "<group>"; };
 		37590E80250F885C00A63505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37590E88250F9B8C00A63505 /* TaxiMapUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiMapUITest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -481,10 +483,27 @@
 		37590E7D250F885C00A63505 /* YourTaxiUITests */ = {
 			isa = PBXGroup;
 			children = (
-				37590E7E250F885C00A63505 /* YourTaxiUITests.swift */,
+				37590E86250F9ABB00A63505 /* TaxiList */,
+				37590E87250F9B6100A63505 /* TaxiMap */,
 				37590E80250F885C00A63505 /* Info.plist */,
 			);
 			path = YourTaxiUITests;
+			sourceTree = "<group>";
+		};
+		37590E86250F9ABB00A63505 /* TaxiList */ = {
+			isa = PBXGroup;
+			children = (
+				37590E7E250F885C00A63505 /* TaxiListViewUITests.swift */,
+			);
+			path = TaxiList;
+			sourceTree = "<group>";
+		};
+		37590E87250F9B6100A63505 /* TaxiMap */ = {
+			isa = PBXGroup;
+			children = (
+				37590E88250F9B8C00A63505 /* TaxiMapUITest.swift */,
+			);
+			path = TaxiMap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -662,7 +681,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37590E7F250F885C00A63505 /* YourTaxiUITests.swift in Sources */,
+				37590E89250F9B8C00A63505 /* TaxiMapUITest.swift in Sources */,
+				37590E7F250F885C00A63505 /* TaxiListViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

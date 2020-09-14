@@ -43,8 +43,8 @@ class MapCoordinator: NSObject, MKMapViewDelegate {
         let neMapPoint = MKMapPoint(x: mRect.maxX, y: mRect.origin.y)
         let swMapPoint = MKMapPoint(x: mRect.origin.x, y: mRect.maxY)
         
-        neCoord = neMapPoint.coordinate
-        swCoord = swMapPoint.coordinate
-        isUpdatedCoord = true
+//        neCoord = neMapPoint.coordinate
+//        swCoord = swMapPoint.coordinate
+//        isUpdatedCoord = true
     }
 }
