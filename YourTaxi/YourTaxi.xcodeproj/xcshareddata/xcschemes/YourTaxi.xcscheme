@@ -39,6 +39,16 @@
                ReferencedContainer = "container:YourTaxi.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "37590E7B250F885C00A63505"
+               BuildableName = "YourTaxiUITests.xctest"
+               BlueprintName = "YourTaxiUITests"
+               ReferencedContainer = "container:YourTaxi.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

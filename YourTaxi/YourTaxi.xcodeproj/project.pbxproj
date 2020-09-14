@@ -35,10 +35,18 @@
 		374B7B512507C4BB00BBADE7 /* RemoteManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B502507C4BB00BBADE7 /* RemoteManagerMock.swift */; };
 		374B7B522507C76900BBADE7 /* TaxiListResponseMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 374B7B472507C1E500BBADE7 /* TaxiListResponseMock.json */; };
 		37590E77250F7BB400A63505 /* TaxiListRowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37590E76250F7BB400A63505 /* TaxiListRowTests.swift */; };
+		37590E7F250F885C00A63505 /* YourTaxiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37590E7E250F885C00A63505 /* YourTaxiUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		374B7AF32507748A00BBADE7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 374B7AD42507748000BBADE7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 374B7ADB2507748000BBADE7;
+			remoteInfo = YourTaxi;
+		};
+		37590E81250F885C00A63505 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 374B7AD42507748000BBADE7 /* Project object */;
 			proxyType = 1;
@@ -80,6 +88,9 @@
 		374B7B4C2507C41200BBADE7 /* TaxiListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiListViewModelTests.swift; sourceTree = "<group>"; };
 		374B7B502507C4BB00BBADE7 /* RemoteManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteManagerMock.swift; sourceTree = "<group>"; };
 		37590E76250F7BB400A63505 /* TaxiListRowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiListRowTests.swift; sourceTree = "<group>"; };
+		37590E7C250F885C00A63505 /* YourTaxiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YourTaxiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		37590E7E250F885C00A63505 /* YourTaxiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourTaxiUITests.swift; sourceTree = "<group>"; };
+		37590E80250F885C00A63505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +108,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		37590E79250F885C00A63505 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -105,6 +123,7 @@
 			children = (
 				374B7ADE2507748000BBADE7 /* YourTaxi */,
 				374B7AF52507748A00BBADE7 /* YourTaxiTests */,
+				37590E7D250F885C00A63505 /* YourTaxiUITests */,
 				374B7ADD2507748000BBADE7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -114,6 +133,7 @@
 			children = (
 				374B7ADC2507748000BBADE7 /* YourTaxi.app */,
 				374B7AF22507748A00BBADE7 /* YourTaxiTests.xctest */,
+				37590E7C250F885C00A63505 /* YourTaxiUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -425,6 +445,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		37590E7D250F885C00A63505 /* YourTaxiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				37590E7E250F885C00A63505 /* YourTaxiUITests.swift */,
+				37590E80250F885C00A63505 /* Info.plist */,
+			);
+			path = YourTaxiUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -463,6 +492,24 @@
 			productReference = 374B7AF22507748A00BBADE7 /* YourTaxiTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		37590E7B250F885C00A63505 /* YourTaxiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37590E85250F885C00A63505 /* Build configuration list for PBXNativeTarget "YourTaxiUITests" */;
+			buildPhases = (
+				37590E78250F885C00A63505 /* Sources */,
+				37590E79250F885C00A63505 /* Frameworks */,
+				37590E7A250F885C00A63505 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37590E82250F885C00A63505 /* PBXTargetDependency */,
+			);
+			name = YourTaxiUITests;
+			productName = YourTaxiUITests;
+			productReference = 37590E7C250F885C00A63505 /* YourTaxiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -479,6 +526,10 @@
 					374B7AF12507748A00BBADE7 = {
 						CreatedOnToolsVersion = 11.6;
 						LastSwiftMigration = 1160;
+						TestTargetID = 374B7ADB2507748000BBADE7;
+					};
+					37590E7B250F885C00A63505 = {
+						CreatedOnToolsVersion = 11.6;
 						TestTargetID = 374B7ADB2507748000BBADE7;
 					};
 				};
@@ -499,6 +550,7 @@
 			targets = (
 				374B7ADB2507748000BBADE7 /* YourTaxi */,
 				374B7AF12507748A00BBADE7 /* YourTaxiTests */,
+				37590E7B250F885C00A63505 /* YourTaxiUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -521,6 +573,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				374B7B482507C1E500BBADE7 /* TaxiListResponseMock.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37590E7A250F885C00A63505 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +622,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		37590E78250F885C00A63505 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37590E7F250F885C00A63505 /* YourTaxiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -570,6 +637,11 @@
 			isa = PBXTargetDependency;
 			target = 374B7ADB2507748000BBADE7 /* YourTaxi */;
 			targetProxy = 374B7AF32507748A00BBADE7 /* PBXContainerItemProxy */;
+		};
+		37590E82250F885C00A63505 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 374B7ADB2507748000BBADE7 /* YourTaxi */;
+			targetProxy = 37590E81250F885C00A63505 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -797,6 +869,44 @@
 			};
 			name = Release;
 		};
+		37590E83250F885C00A63505 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DU4SSYH2B5;
+				INFOPLIST_FILE = YourTaxiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = EnricPou.YourTaxiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YourTaxi;
+			};
+			name = Debug;
+		};
+		37590E84250F885C00A63505 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DU4SSYH2B5;
+				INFOPLIST_FILE = YourTaxiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = EnricPou.YourTaxiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YourTaxi;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -823,6 +933,15 @@
 			buildConfigurations = (
 				374B7AFF2507748A00BBADE7 /* Debug */,
 				374B7B002507748A00BBADE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37590E85250F885C00A63505 /* Build configuration list for PBXNativeTarget "YourTaxiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37590E83250F885C00A63505 /* Debug */,
+				37590E84250F885C00A63505 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
