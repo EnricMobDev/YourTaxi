@@ -34,6 +34,7 @@
 		374B7B4D2507C41200BBADE7 /* TaxiListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B4C2507C41200BBADE7 /* TaxiListViewModelTests.swift */; };
 		374B7B512507C4BB00BBADE7 /* RemoteManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B7B502507C4BB00BBADE7 /* RemoteManagerMock.swift */; };
 		374B7B522507C76900BBADE7 /* TaxiListResponseMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 374B7B472507C1E500BBADE7 /* TaxiListResponseMock.json */; };
+		37590E77250F7BB400A63505 /* TaxiListRowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37590E76250F7BB400A63505 /* TaxiListRowTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		374B7B492507C21E00BBADE7 /* TaxiListMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiListMock.swift; sourceTree = "<group>"; };
 		374B7B4C2507C41200BBADE7 /* TaxiListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiListViewModelTests.swift; sourceTree = "<group>"; };
 		374B7B502507C4BB00BBADE7 /* RemoteManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteManagerMock.swift; sourceTree = "<group>"; };
+		37590E76250F7BB400A63505 /* TaxiListRowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiListRowTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,6 +371,7 @@
 			children = (
 				374B7B402507C05C00BBADE7 /* Mocks */,
 				374B7B4B2507C3F300BBADE7 /* ViewModel */,
+				37590E74250F7B6C00A63505 /* TaxiListRow */,
 			);
 			path = TaxiList;
 			sourceTree = "<group>";
@@ -404,6 +407,22 @@
 				374B7B502507C4BB00BBADE7 /* RemoteManagerMock.swift */,
 			);
 			path = RemoteManager;
+			sourceTree = "<group>";
+		};
+		37590E74250F7B6C00A63505 /* TaxiListRow */ = {
+			isa = PBXGroup;
+			children = (
+				37590E75250F7B8D00A63505 /* ViewModel */,
+			);
+			path = TaxiListRow;
+			sourceTree = "<group>";
+		};
+		37590E75250F7B8D00A63505 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				37590E76250F7BB400A63505 /* TaxiListRowTests.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -539,6 +558,7 @@
 			files = (
 				374B7B4D2507C41200BBADE7 /* TaxiListViewModelTests.swift in Sources */,
 				374B7B512507C4BB00BBADE7 /* RemoteManagerMock.swift in Sources */,
+				37590E77250F7BB400A63505 /* TaxiListRowTests.swift in Sources */,
 				374B7B4A2507C21E00BBADE7 /* TaxiListMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
