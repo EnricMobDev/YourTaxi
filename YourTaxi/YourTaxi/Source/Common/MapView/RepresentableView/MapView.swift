@@ -54,6 +54,6 @@ struct MapView: UIViewRepresentable {
     
     // MARK: - MapCoordinator
     func makeCoordinator() -> MapCoordinator {
-        MapCoordinator(self, neCoord: $neCoord, swCoord: $swCoord)
+        MapCoordinator(self)
     }
 }

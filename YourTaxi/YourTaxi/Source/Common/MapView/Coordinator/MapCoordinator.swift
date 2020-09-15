@@ -13,15 +13,10 @@ import SwiftUI
 class MapCoordinator: NSObject, MKMapViewDelegate {
     // MARK: Variables
     var parent: MapView
-    @Binding var neCoord: CLLocationCoordinate2D
-    @Binding var swCoord: CLLocationCoordinate2D
     
     // MARK: Inicialization
-    init(_ parent: MapView, neCoord: Binding<CLLocationCoordinate2D>,
-         swCoord: Binding<CLLocationCoordinate2D>) {
+    init(_ parent: MapView) {
         self.parent = parent
-        _neCoord = neCoord
-        _swCoord = swCoord
     }
     
     // MARK: Annotation methods
