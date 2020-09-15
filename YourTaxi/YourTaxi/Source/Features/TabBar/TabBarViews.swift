@@ -13,7 +13,7 @@ private enum TabBarItems {
     case taxiMap
 }
 
-// MARK:TaxiListTabView
+// MARK: - TaxiListTabView
 struct TaxiListTabView: View {
     let taxiListFetchable: TaxiListFetchableProtocol
 
@@ -25,6 +25,7 @@ struct TaxiListTabView: View {
     }
 }
 
+// MARK: - TaxiMapTabView
 struct TaxiMapTabView: View {
     let taxiListFetchable: TaxiListFetchableProtocol
 

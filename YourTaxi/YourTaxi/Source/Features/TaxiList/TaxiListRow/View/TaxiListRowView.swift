@@ -18,21 +18,20 @@ struct TaxiListRowView: View {
         self.viewModel = viewModel
     }
     
+    //MARK: - Body
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text(viewModel.type)
+            Text(viewModel.taxi.type)
                 .font(.title)
             mapView()
-            Text("\(StringKey.taxiListState.localized): \(viewModel.state)")
-            Text("\(StringKey.taxiListLicene.localized): \(viewModel.license)")
+            Text("\(StringKey.taxiListState.localized): \(viewModel.taxi.state)")
+            Text("\(StringKey.taxiListLicene.localized): \(viewModel.taxi.license)")
         }
     }
     
     // MARK: - Views Design
     private func mapView() -> some View {
-        let emptyLocation = Binding<CLLocationCoordinate2D>.constant(CLLocationCoordinate2D())
-        
-        return MapView(pins: [viewModel.taxi], neCoord: emptyLocation, swCoord: emptyLocation, isUpdatedCoord: Binding<Bool>.constant(false))
+        return MapView(pins: [viewModel.taxi])
             .cornerRadius(25)
             .disabled(true)
             .padding(.horizontal)

@@ -12,17 +12,11 @@ import SwiftUI
 class TaxiListViewModel: ObservableObject {
     // MARK: Variables
     @Published var dataSource: [TaxiListRowViewModel] = []
-    let objectWillChange = PassthroughSubject<Bool, Never>()
+    @Published var isShowingLoader: Bool = true
 
     private let taxiListFetchable: TaxiListFetchableProtocol
     private var disposables = Set<AnyCancellable>()
 
-    var isShowingLoader: Bool = true {
-        willSet {
-            objectWillChange.send(isShowingLoader)
-        }
-    }
-    
     //MARK: - Inicialization
     init(taxiListFetchable: TaxiListFetchableProtocol) {
         self.taxiListFetchable = taxiListFetchable

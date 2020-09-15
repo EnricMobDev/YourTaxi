@@ -22,10 +22,11 @@ class TaxiMapUITest: XCTestCase {
     }
 
     func testLoadMapView() throws {
-        let app = XCUIApplication()
-        app.launch()
-
-        let mapsButton = app.tabBars.buttons["Maps"]
-        mapsButton.tap()
+        app.tabBars.buttons["Maps"].tap()
+        let annotations = app.maps.firstMatch.otherElements
+        app.maps.firstMatch.swipeLeft()
+        app.maps.firstMatch.swipeUp()
+        let newAnnotations = app.maps.firstMatch.otherElements
+        XCTAssertNotEqual(annotations, newAnnotations)
     }
 }

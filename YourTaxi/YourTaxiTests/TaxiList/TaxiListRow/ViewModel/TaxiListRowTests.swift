@@ -22,15 +22,11 @@ class TaxiListRowTests: XCTestCase {
         taxiListRowViewModel = nil
     }
 
-    func testIdIsNotNil() throws {
-        XCTAssertNotNil(taxiListRowViewModel.id)
-    }
-
     func testTypeUpdated() {
         // Given
         let mockType = "TAXI"
         // When
-        let realType = taxiListRowViewModel.type
+        let realType = taxiListRowViewModel.taxi.type
         // Then
         XCTAssertEqual(mockType, realType)
     }
@@ -39,7 +35,7 @@ class TaxiListRowTests: XCTestCase {
         // Given
         let mockState = "ACTIVE"
         // When
-        let realState = taxiListRowViewModel.state
+        let realState = taxiListRowViewModel.taxi.state
         // Then
         XCTAssertEqual(mockState, realState)
     }
@@ -48,22 +44,8 @@ class TaxiListRowTests: XCTestCase {
         // Given
         let mockLicense = 1647471866
         // When
-        let realLicense = taxiListRowViewModel.license
+        let realLicense = taxiListRowViewModel.taxi.license
         // Then
         XCTAssertEqual(mockLicense, realLicense)
     }
-    
-    func testIfIsEquatableObject() {
-        // Given
-        let firstTaxi = TaxiListMock.taxiList
-        var firstMockTaxiObject = TaxiListRowViewModel(taxi: firstTaxi)
-        firstMockTaxiObject.id = UUID(uuidString: UIDevice.current.identifierForVendor!.uuidString)!
-        
-        let secondTaxi = TaxiListMock.taxiList
-        var secondMockTaxiObject = TaxiListRowViewModel(taxi: secondTaxi)
-        secondMockTaxiObject.id = UUID(uuidString: UIDevice.current.identifierForVendor!.uuidString)!
-         // Then
-        XCTAssertEqual(firstMockTaxiObject, secondMockTaxiObject)
-    }
-
 }

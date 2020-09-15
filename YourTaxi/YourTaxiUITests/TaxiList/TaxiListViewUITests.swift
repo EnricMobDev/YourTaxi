@@ -21,14 +21,11 @@ class TaxiListViewUITests: XCTestCase {
         super.tearDown()
     }
 
-    func testlistOfTaxisAndTapInTabBarMapView() throws {
-        let app = XCUIApplication()
-        app.launch()
-
-        let listButton = XCUIApplication().tabBars.buttons["List"]
-        listButton.swipeUp()
-        listButton.tap()
-        XCUIDevice.shared.orientation = .portrait
-        XCUIApplication().tabBars.buttons["Maps"].tap()
+    func testTaxiList() throws {
+        assert(app.tabBars.buttons["List"].waitForExistence(timeout: 5))
+        let texts = app.staticTexts
+        app.swipeUp()
+        let newTexts = app.staticTexts
+        XCTAssertNotEqual(texts, newTexts)
     }
 }

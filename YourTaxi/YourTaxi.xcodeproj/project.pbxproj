@@ -40,6 +40,7 @@
 		37590E77250F7BB400A63505 /* TaxiListRowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37590E76250F7BB400A63505 /* TaxiListRowTests.swift */; };
 		37590E7F250F885C00A63505 /* TaxiListViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37590E7E250F885C00A63505 /* TaxiListViewUITests.swift */; };
 		37590E89250F9B8C00A63505 /* TaxiMapUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37590E88250F9B8C00A63505 /* TaxiMapUITest.swift */; };
+		375D2A202510ABCD004047EA /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D2A1F2510ABCD004047EA /* Notifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		37590E7E250F885C00A63505 /* TaxiListViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiListViewUITests.swift; sourceTree = "<group>"; };
 		37590E80250F885C00A63505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37590E88250F9B8C00A63505 /* TaxiMapUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiMapUITest.swift; sourceTree = "<group>"; };
+		375D2A1F2510ABCD004047EA /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +268,7 @@
 				374B7B2F25079B9000BBADE7 /* StringKey */,
 				374B7B212507876300BBADE7 /* APIService */,
 				374B7B132507796200BBADE7 /* SFSymbols */,
+				375D2A1E2510AB90004047EA /* Notifications */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -506,6 +509,14 @@
 			path = TaxiMap;
 			sourceTree = "<group>";
 		};
+		375D2A1E2510AB90004047EA /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				375D2A1F2510ABCD004047EA /* Notifications.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -644,6 +655,7 @@
 			files = (
 				374B7B3425079C8100BBADE7 /* Localization+Extension.swift in Sources */,
 				374B7B382507BAFC00BBADE7 /* MapView.swift in Sources */,
+				375D2A202510ABCD004047EA /* Notifications.swift in Sources */,
 				374B7B1925077C6F00BBADE7 /* TaxiListRowView.swift in Sources */,
 				374B7B0F2507786500BBADE7 /* TaxiListViewModel.swift in Sources */,
 				374B7AE02507748000BBADE7 /* AppDelegate.swift in Sources */,

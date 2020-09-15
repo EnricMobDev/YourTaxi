@@ -12,41 +12,48 @@ import Combine
 
 struct MapView: UIViewRepresentable {
     // MARK: Variables
-    var pins: [TaxiListResponse.Taxi]
-    @Binding var neCoord: CLLocationCoordinate2D
-    @Binding var swCoord: CLLocationCoordinate2D
-    @Binding var isUpdatedCoord: Bool
+    var pins: [TaxiListResponse.Taxi]    
+    @State var neCoord = CLLocationCoordinate2D(latitude: 53.694865, longitude: 10.099891)
+    @State var swCoord = CLLocationCoordinate2D(latitude: 53.394655, longitude:  9.757589)
 
     // MARK: MapView Creation
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
-        mapView.showsUserLocation = true
         mapView.delegate = context.coordinator
+        
+        let span = MKCoordinateSpan(latitudeDelta: 0.01,
+                                    longitudeDelta: 0.01)
+        
+        let center: CLLocationCoordinate2D
+        if pins.count == 1, let point = pins.first?.coordinate {
+            center = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
+        } else {
+            center = CLLocationCoordinate2D(latitude: (neCoord.latitude + swCoord.latitude) / 2,
+                                            longitude: (neCoord.longitude + swCoord.longitude) / 2)
+        }
+        
+        let region = MKCoordinateRegion(center: center, span: span)
+        mapView.setRegion(region, animated: true)
         return mapView
     }
+    
+    
     
     func updateUIView(_ view: MKMapView, context: Context) {
         view.removeAnnotations(view.annotations)
         
-        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-        let _ = pins.filter {
-            let rangeOfLatitude = ($0.coordinate.latitude >= swCoord.latitude) && ($0.coordinate.latitude <= neCoord.latitude)
-            let rangeOfLongitude = ($0.coordinate.longitude >= swCoord.longitude) && ($0.coordinate.longitude <= neCoord.longitude)
-            
-            if rangeOfLatitude && rangeOfLongitude{
-                let location = CLLocationCoordinate2D(latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude)
-                let annotation = MapPin(coordinate: location)
-                let region = MKCoordinateRegion(center: location, span: span)
-                
-                view.setRegion(region, animated: true)
-                view.addAnnotation(annotation)
-            }
-            return true
+        let annotations: [MKAnnotation] = pins
+            .map {
+            let location = CLLocationCoordinate2D(latitude: $0.coordinate.latitude,
+                                                  longitude: $0.coordinate.longitude)
+            return MapPin(coordinate: location)
         }
+    
+        view.addAnnotations(annotations)
     }
     
     // MARK: - MapCoordinator
     func makeCoordinator() -> MapCoordinator {
-        MapCoordinator(self, neCoord: $neCoord, swCoord: $swCoord, isUpdatedCoord: $isUpdatedCoord)
+        MapCoordinator(self, neCoord: $neCoord, swCoord: $swCoord)
     }
 }

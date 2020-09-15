@@ -17,13 +17,13 @@ class TaxiListViewModelTests: XCTestCase {
     var viewModel: TaxiListViewModel!
     private var disposables = Set<AnyCancellable>()
     
-    override func setUpWithError() throws {
+    override func setUp() {
         remoteManagerMock = RemoteManagerMock()
         taxiListMock = TaxiListMock()
         viewModel = TaxiListViewModel(taxiListFetchable: remoteManagerMock)
     }
     
-    override func tearDownWithError() throws {
+    override func tearDown() {
         remoteManagerMock = nil
         taxiListMock = nil
         viewModel = nil
@@ -34,6 +34,7 @@ class TaxiListViewModelTests: XCTestCase {
         self.viewModel.fetchTaxiList()
 
         viewModel.$dataSource
+            .dropFirst()
             .sink {
                 XCTAssertEqual($0, [self.taxiListMock.taxis])
                 expectation.fulfill()

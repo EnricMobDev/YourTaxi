@@ -15,14 +15,13 @@ class MapCoordinator: NSObject, MKMapViewDelegate {
     var parent: MapView
     @Binding var neCoord: CLLocationCoordinate2D
     @Binding var swCoord: CLLocationCoordinate2D
-    @Binding var isUpdatedCoord: Bool
     
     // MARK: Inicialization
-    init(_ parent: MapView, neCoord: Binding<CLLocationCoordinate2D>, swCoord: Binding<CLLocationCoordinate2D>, isUpdatedCoord : Binding<Bool>) {
+    init(_ parent: MapView, neCoord: Binding<CLLocationCoordinate2D>,
+         swCoord: Binding<CLLocationCoordinate2D>) {
         self.parent = parent
         _neCoord = neCoord
         _swCoord = swCoord
-        _isUpdatedCoord = isUpdatedCoord
     }
     
     // MARK: Annotation methods
@@ -42,9 +41,23 @@ class MapCoordinator: NSObject, MKMapViewDelegate {
         let mRect = mapView.visibleMapRect
         let neMapPoint = MKMapPoint(x: mRect.maxX, y: mRect.origin.y)
         let swMapPoint = MKMapPoint(x: mRect.origin.x, y: mRect.maxY)
-        
-//        neCoord = neMapPoint.coordinate
-//        swCoord = swMapPoint.coordinate
-//        isUpdatedCoord = true
+
+        postNotificationWithCoordinate(neMapPoint: neMapPoint, swMapPoint: swMapPoint)
+    }
+}
+
+//MARK: - Notifications
+enum Coordinates: String {
+    case nePoint = "nePoint"
+    case swPoint = "swPoint"
+}
+
+extension MapCoordinator {
+    private func postNotificationWithCoordinate(neMapPoint: MKMapPoint, swMapPoint: MKMapPoint) {
+        NotificationCenter.default.post(name: Notification.Name.Map.updatedRegion, object: self,
+                                        userInfo: [
+                                            Coordinates.nePoint: neMapPoint,
+                                            Coordinates.swPoint: swMapPoint
+        ])
     }
 }

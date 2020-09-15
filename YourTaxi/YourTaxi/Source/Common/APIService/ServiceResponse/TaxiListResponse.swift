@@ -12,15 +12,20 @@ struct TaxiListResponse: Codable {
     let poiList: [Taxi]
 
     // MARK: - Taxi
-    struct Taxi: Codable {
-        let id: Int
+    struct Taxi: Codable, Equatable {
+        let license: Int
         let coordinate: Coordinate
         let state, type: String
         let heading: Double
+        
+        enum CodingKeys: String, CodingKey {
+            case license = "id"
+            case coordinate, state, type, heading
+        }
     }
 
     // MARK: - Coordinate
-    struct Coordinate: Codable {
+    struct Coordinate: Codable, Equatable {
         let latitude, longitude: Double
     }
 }

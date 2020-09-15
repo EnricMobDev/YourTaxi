@@ -11,10 +11,7 @@ import MapKit
 
 enum TaxiMapBuilder {
     static func makeTaxiMapView(taxiListFetchable: TaxiListFetchableProtocol) -> some View {
-        let northEstHamburgCoordinate = CLLocationCoordinate2D(latitude: 53.694865, longitude: 10.099891)
-        let southWestHamburgCoordinate = CLLocationCoordinate2D(latitude: 53.394655, longitude:  9.757589)
-        
         let viewModel = TaxiMapViewModel(taxiListFetchable: taxiListFetchable)
-        return TaxiMapView(viewModel: viewModel, neCoord: northEstHamburgCoordinate, swCoord: southWestHamburgCoordinate, isUpdatedCoord: false)
+        return TaxiMapView(viewModel: viewModel)
     }
 }

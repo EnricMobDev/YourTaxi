@@ -29,7 +29,7 @@ struct TaxiListView: View {
     
     var dataLoadedView: some View {
         List {
-            ForEach(viewModel.dataSource, content: TaxiListRowView.init(viewModel:))
+            ForEach(viewModel.dataSource, id: \.taxi.license, content: TaxiListRowView.init(viewModel:))
         }
     }
 }

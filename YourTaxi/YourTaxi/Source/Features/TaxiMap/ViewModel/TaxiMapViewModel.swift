@@ -20,14 +20,19 @@ class TaxiMapViewModel: ObservableObject {
     //MARK: - Inicialization
     init(taxiListFetchable: TaxiListFetchableProtocol) {
         self.taxiListFetchable = taxiListFetchable
+        addObserverAndFetchedTaxis()
     }
     
+    deinit {
+        self.removeObserverForFetchedTaxis()
+    }
+
     // MARK: Interactions
-    func fetchTaxiList(firstLatitude: CLLocationDegrees, secondLatitude: CLLocationDegrees, firstLongitude: CLLocationDegrees, secondLongitude: CLLocationDegrees) {
-        taxiListFetchable.fetchAllTaxis(firstLatitude: firstLatitude, // neCoord.lat
-                                        secondLatitude: secondLatitude, // swCoord.lat
-                                        firstLongitude: firstLongitude, // swCoord.long
-                                        secondLongitude: secondLongitude) // neCoord.long
+    func fetchTaxis(in nePoint: CLLocationCoordinate2D, and swPoint: CLLocationCoordinate2D) {
+        taxiListFetchable.fetchAllTaxis(firstLatitude: nePoint.latitude, 
+                                        secondLatitude: swPoint.latitude,
+                                        firstLongitude: swPoint.longitude,
+                                        secondLongitude: nePoint.longitude)
             .receive(on: DispatchQueue.main)
             .sink(
                 receiveCompletion: { [weak self] value in
@@ -44,5 +49,24 @@ class TaxiMapViewModel: ObservableObject {
                     self.dataSource = taxiList.poiList
             })
             .store(in: &disposables)
+    }
+}
+
+// MARK: - Notifications
+extension TaxiMapViewModel {
+    private func addObserverAndFetchedTaxis() {
+        NotificationCenter.default.addObserver(forName: Notification.Name.Map.updatedRegion, object: nil, queue: .main) {
+            [weak self] in
+            guard let self = self,
+                let userInfo = $0.userInfo,
+                let nePoint = userInfo[Coordinates.nePoint] as? MKMapPoint,
+                let swPoint = userInfo[Coordinates.swPoint] as? MKMapPoint else { preconditionFailure("Notification can't add observer") }
+            
+            self.fetchTaxis(in: nePoint.coordinate, and: swPoint.coordinate)
+        }
+    }
+    
+    private func removeObserverForFetchedTaxis() {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.Map.updatedRegion, object: nil)
     }
 }

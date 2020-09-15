@@ -9,33 +9,12 @@
 import SwiftUI
 import MapKit
 
-struct TaxiListRowViewModel: Identifiable {
+struct TaxiListRowViewModel: Equatable { 
     //MARK: - Variables
     let taxi: TaxiListResponse.Taxi
-    
-    var id = UUID()
-    
-    var type: String {
-        return taxi.type
-    }
-    
-    var state: String {
-        return taxi.state
-    }
-    
-    var license: Int {
-        return taxi.id
-    }
     
     //MARK: - Initialization
     init(taxi: TaxiListResponse.Taxi) {
         self.taxi = taxi
-    }
-}
-
-//MARK: - Equatable
-extension TaxiListRowViewModel: Equatable {
-    static func == (lhs: TaxiListRowViewModel, rhs: TaxiListRowViewModel) -> Bool {
-        return lhs.id == rhs.id
     }
 }
